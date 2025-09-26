@@ -1,120 +1,149 @@
 /* ============================
    GLOBAL STYLES
+   Base styles applied across the whole site
 ============================ */
 body {
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif; /* Set font */
   margin: 0;
   padding: 0;
-  background: #fff;
-  color: #000;
+  background: #fff;   /* White background */
+  color: #000;        /* Default text color */
 }
 
 header {
-  background: #000;
-  color: #fff;
-  padding: 15px 0;
-  text-align: center;
+  background: #000;   /* Black header background */
+  color: #fff;        /* White text inside header */
+  padding: 15px 0;    /* Vertical spacing */
+  text-align: center; /* Center logo & nav */
 }
 
 header .logo-header {
-  width: 150px;
+  width: 150px;       /* Fixed logo width */
 }
 
+/* ============================
+   NAVIGATION BAR
+============================ */
 nav ul {
-  list-style: none;
+  list-style: none;      /* Remove bullets */
   padding: 0;
   margin: 10px 0 0;
-  display: flex;
+  display: flex;         /* Align items horizontally */
   justify-content: center;
-  gap: 15px;
+  gap: 15px;             /* Space between links */
 }
 
 nav ul li a {
-  color: white;
-  text-decoration: none;
+  color: grey;           /* Default link color */
+  text-decoration: none; /* Remove underline */
   font-weight: bold;
-  padding: 5px 10px;
-}
-
-nav ul li a.active, nav ul li a:hover {
-  background: green;
+  padding: 5px 10px;     /* Add clickable padding */
   border-radius: 5px;
+  transition: background 0.3s, color 0.3s; /* Smooth hover effect */
 }
 
+/* Hover effect for links */
+nav ul li a:hover {
+  background: #d4f0d4;   /* Light green background */
+  color: black;          /* Text turns black */
+}
+
+/* Active (selected) nav link */
+nav ul li a.active {
+  background: green;
+  color: white;
+}
+
+/* ============================
+   MAIN CONTENT AREA
+============================ */
 main {
   padding: 20px;
-  max-width: 1000px;
-  margin: auto;
+  max-width: 1000px;     /* Limit line length for readability */
+  margin: auto;          /* Center content */
   text-align: center;
 }
 
 h2 {
-  color: green;
+  color: green;          /* Section headings green */
   margin-bottom: 15px;
 }
 
 /* ============================
-   CATEGORIES
+   CATEGORY GRID (Boxes for sections)
 ============================ */
 .category-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
+  display: grid;                                /* CSS Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;                                    /* Space between boxes */
+  margin-top: 20px;
 }
 
 .category-box {
-  flex: 1 1 150px;
-  background: #eee;
+  display: block;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   padding: 20px;
-  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1rem;
   font-weight: bold;
+  color: #333;
+  text-decoration: none;                        /* Remove underline */
+  transition: all 0.3s ease;                    /* Smooth hover animations */
+}
+
+/* Hover effect for category boxes */
+.category-box:hover {
+  background: #f0fff0;                          /* Light green tint */
+  color: green;
+  transform: translateY(-5px);                  /* Lift upwards */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);        /* Add shadow */
 }
 
 /* ============================
-   PRODUCT GRID
+   PRODUCT GRID (Products page)
 ============================ */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
   gap: 20px;
 }
 
 .product-card {
-  background: #f9f9f9;
+  background: #f9f9f9;         /* Light background for product */
   padding: 15px;
   border-radius: 8px;
   text-align: center;
 }
 
 .product-card img {
-  width: 100%;
+  width: 100%;                 /* Full width inside card */
   height: auto;
-  object-fit: cover;
-  aspect-ratio: 4/5;
+  object-fit: cover;           /* Crop image proportionally */
+  aspect-ratio: 4/5;           /* Consistent image shape */
   border-radius: 5px;
 }
 
 .product-card h4 {
-  color: green;
+  color: green;                /* Product name green */
   margin: 10px 0 5px;
 }
 
 .product-card p {
-  font-size: 0.95rem;
+  font-size: 0.95rem;          /* Slightly smaller text */
   color: #333;
 }
 
 /* ============================
-   FORMS
+   FORMS (Contact / Enquiry)
 ============================ */
 form {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  /* Stack fields vertically */
   gap: 10px;
-  max-width: 500px;
-  margin: auto;
+  max-width: 500px;        /* Limit width */
+  margin: auto;            /* Center form */
 }
 
 input, textarea {
@@ -135,241 +164,54 @@ button {
 }
 
 button:hover {
-  background: darkgreen;
+  background: darkgreen;   /* Darker shade on hover */
 }
 
 /* ============================
-   MAP
+   CATEGORY NAVIGATION (Products Page)
+   Extra navigation bar above products
 ============================ */
-.map-container {
-  margin: 20px 0;
-  border-radius: 8px;
-  overflow: hidden;
+.category-nav {
+  background: #f2f2f2;     /* Light grey bar */
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+  margin: 25px 0;          /* Space around nav */
+}
+
+.category-nav a {
+  display: inline-block;
+  margin: 6px;
+  padding: 8px 14px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  border: 1px solid #999;
+  border-radius: 5px;
+  background: #e6e6e6;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+/* Hover effect for category nav */
+.category-nav a:hover {
+  background: #ccc;
+  color: #000;
+  transform: translateY(-2px); /* Slight lift */
+}
+
+/* Active category nav item */
+.category-nav a.active {
+  background: green;
+  color: white;
+  border-color: #222;
 }
 
 /* ============================
    FOOTER
 ============================ */
 footer {
-  background: #000;
+  background: #000;   /* Black footer background */
   color: white;
-  padding: 15px;
+  padding: 20px 10px;
   text-align: center;
-}
-
-/* ============================
-   RESPONSIVE
-============================ */
-@media(max-width:600px){
-  nav ul {
-    flex-direction: column;
-  }
-
-  .category-grid {
-    flex-direction: column;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ============================
-   WELCOME PAGE ANIMATIONS
-============================ */
-body.welcome {
-  background: black;
-  color: white;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.intro-container {
-  max-width: 800px;
-  padding: 20px;
-}
-
-/* Typing effect */
-.typing {
-  color: green;
-  font-size: 3rem;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 4px solid green;
-  width: 0;
-  margin: 0 auto;
-  animation: typing 3s steps(30, end) forwards, blink 0.7s infinite step-end;
-}
-
-.typing span { font-weight: bold; }
-
-@keyframes typing { from {width:0;} to {width:22ch;} }
-@keyframes blink { 50% {border-color: transparent;} }
-
-/* Logo fade in */
-.logo {
-  width: 200px;
-  margin: 20px 0;
-  opacity: 0;
-  animation: fadeIn 1.5s 3s forwards;
-}
-
-/* Caption letter by letter with spacing */
-.caption {
-  color: white;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  word-spacing: 5px;
-  letter-spacing: 1px;
-}
-
-.caption .letter {
-  opacity: 0;
-  transform: translateY(20px);
-  display: inline-block;
-  animation: letterFade 0.5s forwards;
-}
-
-/* Enter button */
-.enter-btn {
-  display: inline-block;
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  background: green;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  opacity: 0;
-  animation: fadeIn 1.5s 6s forwards;
-}
-
-.enter-btn:hover { background: darkgreen; }
-
-@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-@keyframes letterFade { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-/* ============================
-   HORIZONTAL SWIPE PRODUCTS
-============================ */
-.product-swipe-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 20px;
-  padding: 20px 0;
-  -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
-}
-
-.product-swipe-container::-webkit-scrollbar {
-  display: none; /* hide scrollbar */
-}
-
-.product-card {
-  min-width: 180px; /* adjust to fit more cards */
-  max-width: 220px;
-  flex-shrink: 0;
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  scroll-snap-align: start;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  aspect-ratio: 4/5;
-  border-radius: 5px;
-}
-
-.product-card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-/* Responsive for mobile screens */
-@media (max-width: 768px) {
-  .product-card {
-    min-width: 140px;
-    max-width: 180px;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-card {
-    min-width: 120px;
-    max-width: 150px;
-  }
-}
-
-.more-link {
-  color: green;
-  font-weight: bold;
-  text-decoration: none;
-  margin-left: 8px;
-}
-
-.more-link:hover {
-  text-decoration: underline;
-  color: darkgreen;
-}
-
-
-/* ============================
-  MZANSI ZONE TEAM MEMBERS
-============================ */
-
-.team {
-  margin: 50px 0;
-  text-align: center;
-}
-
-.team-list {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.team-list li {
-  font-size: 1.2rem;
-  margin: 10px 0;
-}
-
-.name {
-  font-weight: bold;
-  text-decoration: underline;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.name.owner:hover {
-  color: green;
-}
-
-.name.staff:hover {
-  color: gray;
-}
-
-.tag {
-  display: inline-block;
-  padding: 3px 8px;
-  margin-left: 8px;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  color: white;
-}
-
-.tag.owner {
-  background-color: green;
-}
-
-.tag.staff {
-  background-color: gray;
 }
