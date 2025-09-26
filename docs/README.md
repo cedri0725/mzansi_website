@@ -106,14 +106,24 @@ Lesedi-Sethlako-POE-(Mzansi-Zone-Website)/
 │ ├─ yara2.png # Items
 │ ├─ yurex_watch.png # Items
 │
-├─ 0-index.html # Welcome Page
-├─ 1-home.html # Home page
-├─ 2-about.html # About Us page
-├─ 3-services.html # Services page
-├─ 4-products.html # Products page
-├─ 5-enquiry.html # Enquiry form page
-└─ 6-contact.html # Contact page
- 
+├─ #The proper order
+| ├─ 0-index.html # Welcome Page
+| ├─ 1-home.html # Home page
+| ├─ 2-about.html # About Us page
+| ├─ 3-services.html # Services page
+| ├─ 4-products.html # Products page
+| ├─ 5-enquiry.html # Enquiry form page
+| └─ 6-contact.html # Contact page
+|
+├─ pages/
+| ├─ about.html # About Us page
+| ├─ contact.html # Contact page
+| ├─ enquiry.html # Enquiry form page
+| ├─ home.html # Home page
+| ├─ products.html # Products page
+| └─ services.html # Services page
+|
+└─ index.html # Welcome Page 
 
 ---
 
